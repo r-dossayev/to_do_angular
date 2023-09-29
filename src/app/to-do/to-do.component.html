@@ -1,0 +1,33 @@
+
+<h1 style="text-align: center;color:white">TodoList</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-3">
+      <div class="input-group md-3">
+        <input type="text" class="form-control" placeholder="Enter" aria-describedby="button-add" [(ngModel)]="newTodo">
+        <button class="btn btn-outline-success" type="button" id="button-add" (click)="saveTodo()">+</button>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">is done</th>
+          <th scope="col">delete</th>
+          <th scope="col">edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let todo of todos;let i = index;">
+          <th scope="row">{{todo.id}}</th>
+          <td class="" (click)="done(i)">{{todo.name}}</td>
+          <td class="" (click)="done(i)">{{todo.isDone ?'done':'not'}}</td>
+          <td style="color: red;font-weight: bold;" (click)="remove(todo.id)">del</td>
+          <td>edit</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

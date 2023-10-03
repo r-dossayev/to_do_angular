@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {ToDoComponent} from "./to-do/to-do.component";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import {LoginComponent} from "./components/login/login.component";
+import {RegisterComponent} from "./components/register/register.component";
+import {IndexComponent} from "./components/index/index.component";
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ToDoComponent,
+    LoginComponent,
+    RegisterComponent,
+    IndexComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

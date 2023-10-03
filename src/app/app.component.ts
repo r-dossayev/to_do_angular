@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {UserService} from "./services/user.service";
+import {User} from "./models/User";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'to_do_angular';
+  title = 'register';
+
+  constructor(private userService: UserService) {
+  }
+  ngOnInit() {
+    this.user = this.userService.getAuthUser();
+    console.log(this.user)
+    console.log("this.user")
+  }
+
+  user:User|null
 }
